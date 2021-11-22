@@ -2,7 +2,7 @@
 
 ### Clone project 
 ```
-git@github.com:hamza-shafiq/SampleDRF.git
+git clone git@github.com:hamza-shafiq/SampleDRF.git
 ```
 
 ### Create & Activate Virtual Environment
