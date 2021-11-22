@@ -21,6 +21,12 @@ pip3 install -r requirements.txt
 python3 manage.py migrate
 ```
 
+### Edit Swagger Template
+```
+venv > lib > rest_framework_swagger > templates > index.html
+{% load staticfiles %} => {% load static %}
+```
+
 ### Run Server
 ```
 python3 manage.py runserver
