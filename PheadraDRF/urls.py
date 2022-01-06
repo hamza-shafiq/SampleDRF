@@ -16,12 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url, include
+from django.views.static import serve as static_serve
+from django.conf import settings
 
 from rest_framework_swagger.views import get_swagger_view
 schema_view = get_swagger_view(title='Dispatch API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', schema_view),
+    path('',  include('info.urls')),
+    url(r'sample-drf^$', schema_view),
     path('dispatch-app/', include('dispatch_app.urls')),
+]
+
+urlpatterns += [
+    url(r'^media/(?P<path>.*)$', static_serve, {'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', static_serve, {'document_root': settings.STATIC_ROOT}),
 ]
