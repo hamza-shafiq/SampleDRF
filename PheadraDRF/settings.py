@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'dispatch_app',
+    'info',
     'rest_framework_swagger',
 ]
 

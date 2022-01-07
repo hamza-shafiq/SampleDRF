@@ -23,7 +23,7 @@ from rest_framework_swagger.views import get_swagger_view
 schema_view = get_swagger_view(title='Dispatch API')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('secure-admin/', admin.site.urls),
     path('',  include('info.urls')),
     url(r'sample-drf^$', schema_view),
     path('dispatch-app/', include('dispatch_app.urls')),
